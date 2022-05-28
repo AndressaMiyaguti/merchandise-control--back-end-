@@ -1,6 +1,6 @@
 import { INestApplication, Injectable, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-// o PrismaService extends(herda) tudo que o prismaClient tem
+
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit {
   async onModuleInit() {
@@ -13,4 +13,3 @@ export class PrismaService extends PrismaClient implements OnModuleInit {
     });
   }
 }
-//Define como vai abrir e fechar a conexão

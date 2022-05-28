@@ -12,6 +12,8 @@ datasource db {
 
 model User {
   id         String   @id @default(uuid())
+  name       String
+  email      String   @unique
   photograph String?
   password   String
   role       String   @default("USER")
@@ -27,6 +29,8 @@ model Product {
   size        String
   price       Float
   salePrice   Float
+  available   String
+  cod         String  @unique
   quantity    Int
   updateAt    DateTime @updatedAt
   createAt    DateTime @default(now())
@@ -41,6 +45,7 @@ model ProductDescount {
   size        String
   salePrice   Float
   category    String
+  cod         String  @unique
   updateAt    DateTime @updatedAt
   createAt    DateTime @default(now())
 }
